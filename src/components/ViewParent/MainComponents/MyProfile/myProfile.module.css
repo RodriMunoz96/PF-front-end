@@ -81,3 +81,4 @@ button {
      /* Asegura que los elementos hijos se apilen verticalmente */
      align-items: flex-start;
      /* Alinea los elementos hijos al inicio del eje transversal (izquierda en este caso) */
+}

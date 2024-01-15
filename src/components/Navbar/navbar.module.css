@@ -4,7 +4,7 @@
     display: flex;
     justify-content: center;
     position: relative;
-    background-color: #0b4c7b;
+    background-color: #51abeb;
     color: #fff;
     padding: 0 10px;
 }
@@ -15,6 +15,16 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.container_logo {
+    padding: 10px;
+}
+
+.container_logo img {
+    width: 100px;
+    height: auto;
+    border-radius: 5px;
 }
 
 @media (max-width: 1440px) {

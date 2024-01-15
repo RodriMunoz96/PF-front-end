@@ -106,17 +106,15 @@ const FormStudent = () => {
                     return true; // Si hay al menos un error, deshabilita el botón
                }
           }
-
           // Además, verifica que todos los campos obligatorios estén llenos
           for (const key in newStudent) {
                if (key !== "fotoPerfil" && key !== "fotoDocumento" && !newStudent[key]) {
                     return true; // Si algún campo obligatorio está vacío, deshabilita el botón
                }
           }
-
           return false; // Si no hay errores ni campos vacíos, habilita el botón
      };
-     dispatch();
+
      const onSubmit = async (event) => {
           event.preventDefault();
 

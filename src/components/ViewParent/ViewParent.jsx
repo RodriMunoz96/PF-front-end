@@ -10,37 +10,28 @@ import { useEffect } from "react";
 import { getParentId } from "../../redux/actions/actions-parents";
 
 function ViewParent() {
-  const locationMyProfile = useLocation().pathname.includes(
-    "/viewParent/myProfile"
-  );
-  const locationMyChildren = useLocation().pathname.includes(
-    "/viewParent/myChildren"
-  );
-  const locationStudentForm = useLocation().pathname.includes(
-    "/viewParent/studentForm"
-  );
+     const locationMyProfile = useLocation().pathname.includes("/viewParent/myProfile");
+     const locationMyChildren = useLocation().pathname.includes("/viewParent/myChildren");
+     const locationStudentForm = useLocation().pathname.includes("/viewParent/studentForm");
+     const locationComentario = useLocation().pathname.includes("/viewParent/comentario");
+     const dispatch = useDispatch();
 
-  const dispatch = useDispatch();
+     useEffect(() => {
+          const userId = sessionStorage.getItem("userId");
+          dispatch(getParentId(userId));
+     });
 
-  useEffect(() => {
-    const userId = sessionStorage.getItem("userId");
-    dispatch(getParentId(userId));
-  });
-  const locationComentario = useLocation().pathname.includes(
-    "/viewParent/comentario"
-  );
-
-  return (
-    <div className={style.container}>
-      <AsideParent />
-      <main className={style.container_main}>
-        {locationMyProfile ? <MyProfile /> : null}
-        {locationMyChildren ? <MyChildren /> : null}
-        {locationStudentForm ? <StudentForm /> : null}
-        {locationComentario ? <Feedback /> : null}
-      </main>
-    </div>
-  );
+     return (
+          <div className={style.container}>
+               <AsideParent />
+               <main className={style.container_main}>
+                    {locationMyProfile ? <MyProfile /> : null}
+                    {locationMyChildren ? <MyChildren /> : null}
+                    {locationStudentForm ? <StudentForm /> : null}
+                    {locationComentario ? <Feedback /> : null}
+               </main>
+          </div>
+     );
 }
 
 export default ViewParent;

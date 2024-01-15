@@ -1,21 +1,61 @@
-.image {
-  max-width: 150px;
-  max-height: 150px;
+.main_container {
+     overflow-y: auto;
+     height: 100%;
 }
-.link_to_paymet {
-  text-decoration: none;
-  color: black;
-  font-family: Arial, Helvetica, sans-serif;
-  width: 120px;
-  text-align: center;
-  border: 1px solid black;
-  padding: 5px 10px;
-  position: relative; /* Cambiar el valor de 'position' */
-  left: 2%; /* Añadir la propiedad 'left' */
-  top: 0%; /* Añadir la propiedad 'top' */
 
-  background-color: #0f4cff; /* Color de fondo */
-  color: #fff; /* Color de texto */
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra de texto */
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8); /* Sombra pronunciada */
+h2 {
+     width: 100%;
+     text-align: center;
 }
+
+.card_container {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-around;
+}
+
+.student_card {
+     border: 1px solid #ddd;
+     /* Borde ligero alrededor de cada tarjeta */
+     border-radius: 8px;
+     /* Bordes redondeados */
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+     /* Sombra ligera */
+     margin: 10px;
+     /* Margen entre las tarjetas */
+     padding: 15px;
+     /* Espaciado interno */
+     text-align: center;
+}
+
+.image {
+     width: 15em;
+     height: 12em;
+     border-radius: 4%;
+     object-fit: cover;
+}
+
+/* Estilo adicional para mejorar la visualización de la información */
+.link_to_paymet {
+     text-decoration: none;
+     color: black;
+     font-family: Arial, Helvetica, sans-serif;
+     width: 120px;
+     text-align: center;
+     border: 1px solid black;
+     padding: 5px 10px;
+     position: relative;
+     /* Cambiar el valor de 'position' */
+     left: 2%;
+     /* Añadir la propiedad 'left' */
+     top: 0%;
+     /* Añadir la propiedad 'top' */
+
+     background-color: #0f4cff;
+     /* Color de fondo */
+     color: #fff;
+     /* Color de texto */
+     text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+     /* Sombra de texto */
+     box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+     /* Sombra pronunciada */

@@ -1,0 +1,101 @@
+.container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.button_back {
+    position: absolute;
+    text-decoration: none;
+    color: black;
+    top: 5%;
+    left: 3%;
+    font-size: 30px;
+}
+.container_details {
+    height: 650px;
+    width: 800px;
+    box-shadow: 0px 6px 9px -4px rgba(0, 0, 0, 0.45);
+    border-radius: 5px;
+}
+/************************/
+.container_details nav {
+    background-color: rgb(18, 17, 17);
+    height: 15%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 5px 5px 0 0px;
+}
+.container_details nav h1 {
+    color: #fff;
+    width: 100%;
+    padding-left: 10px;
+    font-size: 25px;
+}
+/************************/
+.container_details form {
+    height: 85%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+/******************************************/
+.btn_send {
+    position: absolute;
+    background: transparent;
+    border: 1px solid rgb(15, 15, 15);
+    width: 130px;
+    font-size: 15px;
+    padding: 4px 0px;
+    transition: all .3s ease-in-out;
+    bottom: 2%;
+    right: 2%;
+    border-radius: 3px;
+}
+.btn_send:hover {
+    background-color: rgb(15, 15, 15);
+    color: #fff;
+}
+/*************************/
+.container_divs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-top: 40px;
+}
+.container_divs_main {
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+    gap: 10px;
+    width: 50%;
+}
+.container_divs_main {
+    font-size: 20px;
+    color: black;
+}
+.container_divs_main input {
+    width: 98%;
+    height: 30px;
+    font-size: 13px;
+}
+.container_divs_last {
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+    gap: 10px;
+    padding-top: 40px;
+}
+.container_divs_last label {
+    font-size: 20px;
+    color: black;
+}
+.container_divs_last input {
+    width: 99%;
+    height: 30px;
+    font-size: 13px;
+}

@@ -1,0 +1,60 @@
+.background {
+  background-color: #0b4c7b;
+  min-height: 100vh;
+}
+
+.formTitle {
+  text-align: center;
+}
+
+.formParameters {
+  width: 600px;
+  max-width: 70vw;
+  margin: auto;
+  background-color: whitesmoke;
+  color: black;
+  padding: 1em;
+  border-radius: 0.5em;
+  display: flex;
+  flex-direction: column;
+}
+
+.returnButton {
+  padding: 0.6em 1.3em;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  border: 0.2em solid #0b4c7b;
+  color: whitesmoke;
+  background-color: rgb(28, 110, 165);
+  border-radius: 0.6em;
+
+  &:hover {
+    background-color: #007bff;
+    color: #ffffff;
+    border-color: #0056b3;
+  }
+
+  &:active {
+    background-color: #0056b3;
+    border-color: #003366;
+    color: #ffffff;
+  }
+}
+
+.returnButtonContainer {
+  display: flex;
+  justify-content: center;
+  gap: 0.7em;
+}
+
+.alreadyRegistered {
+  font-size: 1.15em;
+  text-align: center;
+}
+
+.returnToLogin {
+  display: flex;
+  justify-content: center;
+}

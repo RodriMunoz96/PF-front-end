@@ -1,0 +1,10 @@
+.container {
+    height: 100%;
+    width: 100%;
+}
+
+.container_carrousel {
+    height: 88%;
+    padding-top: 150px;
+    margin-bottom: 50px;
+}

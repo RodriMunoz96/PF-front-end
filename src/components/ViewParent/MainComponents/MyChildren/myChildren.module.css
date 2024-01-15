@@ -1,0 +1,21 @@
+.image {
+  max-width: 150px;
+  max-height: 150px;
+}
+.link_to_paymet {
+  text-decoration: none;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 120px;
+  text-align: center;
+  border: 1px solid black;
+  padding: 5px 10px;
+  position: relative; /* Cambiar el valor de 'position' */
+  left: 2%; /* Añadir la propiedad 'left' */
+  top: 0%; /* Añadir la propiedad 'top' */
+
+  background-color: #0f4cff; /* Color de fondo */
+  color: #fff; /* Color de texto */
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra de texto */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8); /* Sombra pronunciada */
+}

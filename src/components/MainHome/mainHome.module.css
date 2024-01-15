@@ -1,0 +1,119 @@
+.main {
+    height: 88%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    padding-top: 50px;
+    margin-bottom: 50px;
+}
+
+.container_to_about_us {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container_about_us {
+    display: flex;
+    position: relative;
+    width: 70%;
+}
+
+.container_about_us div:first-child {
+    width: 50%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container_about_us div:first-child img {
+    height: 500px;
+    width: 500px;
+}
+
+.container_about_us div:last-child {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.container_about_us div:last-child h2 {
+    font-size: 25px;
+}
+
+.container_about_us div:last-child p {
+    text-align: center;
+    width: 80%;
+    font-size: 15px;
+}
+
+/****************************/
+.container_to_offers {
+    width: 100%;
+    background-color: rgb(241, 238, 238);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container_offers {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+    width: 70%;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    /* background-color: red; */
+}
+
+.offers {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.offers h2 {
+    font-size: 30px;
+}
+
+.offers_detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    gap: 15px;
+}
+
+.offers_detail img {
+    height: 120px;
+    width: 120px;
+}
+
+.offers_detailh2 {
+    font-size: 20px;
+}
+
+.offers_detail p {
+    font-size: 15px;
+    text-align: center;
+}
+
+@media (max-width: 1440px) {
+    .container_about_us {
+        width: 100%;
+    }
+
+    .container_offers {
+        width: 100%;
+        padding: 100px 20px;
+    }
+}

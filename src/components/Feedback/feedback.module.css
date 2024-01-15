@@ -1,0 +1,4 @@
+.form_container {
+  overflow-y: scroll;
+  max-height: 700px;
+}

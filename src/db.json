@@ -1,0 +1,43 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "john_doe",
+      "email": "john@example.com",
+      "password": "hashed_password",
+      "type": "Admin",
+      "nombre": "John",
+      "apellidoPaterno": "Doe",
+      "apellidoMaterno": "Smith",
+      "complete": true,
+      "validate": true,
+      "state": true
+    },
+    {
+      "id": "2",
+      "username": "jane_smith",
+      "email": "jane@example.com",
+      "password": "hashed_password",
+      "type": "Parents",
+      "nombre": "Jane",
+      "apellidoPaterno": "Smith",
+      "apellidoMaterno": "Doe",
+      "complete": false,
+      "validate": false,
+      "state": true
+    },
+    {
+      "id": "3",
+      "username": "admin_user",
+      "email": "admin@example.com",
+      "password": "hashed_password",
+      "type": "SuperAdmin",
+      "nombre": "Admin",
+      "apellidoPaterno": "User",
+      "apellidoMaterno": "",
+      "complete": true,
+      "validate": true,
+      "state": true
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+.logoutButton {
+    border: 2px solid #0b4c7b;
+    color: whitesmoke;
+    background-color: #0d6efd;
+    border-radius: 6px;
+    width: 130px;
+    font-size: 13px;
+}

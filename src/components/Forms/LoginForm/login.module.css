@@ -1,0 +1,44 @@
+.background {
+  background-color: #0b4c7b;
+  min-height: 100vh;
+}
+
+.formParameters {
+  width: 400px;
+  max-width: 60vw;
+  margin: auto;
+  background-color: whitesmoke;
+  color: black;
+  padding: 1em;
+  border-radius: 0.5em;
+}
+
+.notRegistered {
+  font-size: 1.1em;
+}
+
+.returnButton {
+  display: inline-block;
+  padding: 0.6em 1.3em;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: 0.1em solid #0b4c7b;
+  color: whitesmoke;
+  background-color: rgb(28, 110, 165);
+  border-radius: 0.6em;
+
+  &:hover {
+    background-color: #007bff;
+    color: #ffffff;
+    border-color: #0056b3;
+  }
+
+  &:active {
+    background-color: #0056b3;
+    border-color: #003366;
+    color: #ffffff;
+  }
+}

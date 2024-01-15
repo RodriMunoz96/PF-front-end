@@ -1,0 +1,47 @@
+.container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container_second {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 600px;
+    height: 600px;
+    position: relative;
+}
+.container_second img {
+    width: 450px;
+    height: 550px;
+}
+.navlink {
+    position: absolute;
+    text-decoration: none;
+    color: green;
+    bottom: 28.4%;
+    left: 21.9%;
+    font-size: 30px;
+    border: 2px solid rgb(0, 255, 34);
+    text-align: center;
+    width: 342px;
+    height: 188px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.arrow_left, .arrow_right {
+    position: absolute;
+    color: green;
+}
+.arrow_left {
+    left: 25%;
+    bottom: 42%;
+}
+.arrow_right {
+    right: 25%;
+    bottom: 42%;
+}

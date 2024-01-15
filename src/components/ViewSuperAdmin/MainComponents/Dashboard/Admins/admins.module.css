@@ -1,0 +1,226 @@
+.container {
+    height: 85%;
+    background: #fff;
+    width: 95%;
+    box-shadow: 0px 6px 9px -4px rgba(0, 0, 0, 0.45);
+    position: relative;
+}
+.container_link {
+    position: absolute;
+    right: 1.5%;
+    top: 3%;
+    color: rgba(17, 25, 40);
+    padding: 6px 8px;
+    transition: all .3s ease-in-out;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+}
+.container_link:hover {
+    background-color: black;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+    color: #fff;
+}
+
+/****/
+
+.container_searchbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 300px;
+    gap: 10px;
+    border-radius: 3px;
+    border: 1px solid rgb(160, 158, 158);
+    height: 35px;
+    margin: 25px 1px 0px 20px;
+}
+.container_searchbar input {
+    width: 100%;
+    border: none;
+    font-size: 13px;
+    padding-left: 5px;
+    height: 32px;
+}
+.container_searchbar button {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+}
+
+/****/
+
+.table {
+    top: 17%;
+    position: absolute;
+    width: 100%;
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.3);
+    border-collapse: collapse;
+    text-align: center;
+}
+.table thead {
+    background-color: rgba(17, 25, 40);
+    color: #fff;
+    border-top: 1px solid rgba(0, 0, 0, 0.3);
+}
+.table td button {
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+.table .row td {
+    height: 30px;
+    font-size: 14px;
+    padding: 10px 5px;
+    font-weight: 100;
+    color: black;
+    font-family:'Times New Roman', Times, serif;
+}
+.row_even{
+    background-color: #e9e8e8;
+}
+.row_odd {
+    background-color: #fff;
+}
+
+/*****/
+.overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;  
+    background-color: rgba(0, 0, 0, 0.5)
+}
+.container_details {
+    position: relative;
+    height: 550px;
+    width: 650px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    background-color: #fff;
+    color: black;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.container_details button {
+    background: transparent;
+    border: none;
+    font-weight: 600;
+    position: absolute;
+    top: 1.3%;
+    right: 1.3%;
+    font-size: 18px;
+    transition: all .3s ease-in-out;
+}
+.container_details button:hover{
+    transform: scale(1.1);
+}
+.container_details h1 {
+    position: absolute;
+    font-size: 12px;
+    top: 1%;
+    left: 1%;
+}
+.container_details h2 {
+    font-size: 40px;
+    position: absolute;
+    top: 14%;
+    letter-spacing: 1px;
+}
+.container_details div {
+    position: absolute;
+    left: 5%;
+    bottom: 20%;
+}
+/****************/
+.container_message {
+    position: absolute;
+    bottom: 3%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    gap: 5px;
+}
+.container_message button {
+    background-color: transparent;
+    border: none;
+    font-size: 11px;
+    color: rgb(0, 128, 94);
+    cursor: pointer;
+}
+.container_message small {
+    position: absolute;
+    left: 1%;
+    font-size: 13px;
+}
+.container_status_modify{
+    position: relative;
+    height: 250px;
+    width: 450px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    background-color: #fff;
+    color: black;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.container_status_modify button:first-child {
+    background: transparent;
+    border: none;
+    font-weight: 600;
+    position: absolute;
+    top: 1.3%;
+    right: 1.3%;
+    font-size: 18px;
+    transition: all .3s ease-in-out;
+}
+.container_status_modify button:first-child:hover{
+    transform: scale(1.1);
+}
+.container_status_modify h2 {
+    text-align: center;
+}
+.button_action {
+    background-color: transparent;
+    position: absolute;
+    bottom: 4%;
+    right: 4%;
+    font-size: 13px;
+    border-radius: 4px;
+    transition: all .3s ease-in-out;
+}
+.button_action:hover {
+    color: #fff;
+    background-color:rgb(39, 44, 52);
+}
+/******/
+.container_selects{
+    display: flex;
+    gap: 0px;
+    padding: 20px 20px;
+}
+.container_selects select {
+    border: none;
+    text-align: end;
+    padding-right: 2px;
+    width: 100px;
+}
+.container_selects select option {
+    background-color: #e3dbdb;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/*******/

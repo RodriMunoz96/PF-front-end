@@ -1,0 +1,252 @@
+.containerForm {
+  /* Porcentaje del ancho del contenedor principal */
+  max-width: 100%; /* Establece un ancho máximo para evitar que se estire demasiado */
+  /* Centra el contenedor horizontalmente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.container_form {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.button_back_home {
+  position: absolute;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  top: 92%;
+  left: 20%;
+  font-size: 20px;
+  transition: all 0.3s ease-in-out;
+}
+/* .button_back_home:hover {
+  font-size: 26px;
+} */
+.form {
+  height: auto;
+  width: 120%;
+  background-color: #fff;
+  box-shadow: 2px 0 6px -1px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.1),
+    -2px 0 6px -1px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+/****************************************************/
+
+.navbar {
+  height: 15%;
+  display: flex;
+  align-items: center;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+.navbar h1 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  letter-spacing: 1px;
+  padding-left: 20px;
+  word-spacing: 10px;
+}
+
+/****************************************************/
+
+.container_label_inputs {
+  padding-top: 40px;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.first_container {
+  display: flex;
+  padding-bottom: 30px;
+}
+.first_first_container {
+  display: flex;
+  width: 22%;
+  justify-content: center;
+  align-items: center;
+}
+
+/* IMAGE CLOUDINARY */
+
+.container_image {
+  position: relative;
+  width: 50px;
+  height: 30px;
+  background-color: rgba(128, 128, 128, 0.341);
+  border: 1px solid gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container_image input[type="file"] {
+  display: none;
+}
+.container_image p {
+  position: absolute;
+  bottom: -12%;
+  color: red;
+  font-size: 11px;
+}
+.image_student {
+  height: 250px;
+  width: 150px;
+}
+.label_image_done {
+  position: absolute;
+  background-color: black;
+  top: 0;
+  left: 0;
+  color: #fff;
+  padding: 1px 4px;
+  padding-bottom: 3px;
+  font-size: 15px;
+  text-align: center;
+  cursor: pointer;
+}
+.label_image_undone {
+  background-color: rgb(255, 255, 255);
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  padding: 2px 5px;
+  border-radius: 3px;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* IMAGE CLOUDINARY */
+
+.second_container {
+  padding-left: 0px;
+  height: 150;
+  width: 100;
+}
+.container_telephone,
+.container_jobTelephone,
+.container_contactCellphone,
+.second_first_container_first_line,
+.second_first_container_second_line,
+.second_first_container_third_line {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.container_educationLevel,
+.container_contactCellphone,
+.container_profession,
+.container_email,
+.container_name,
+.container_lastName {
+  width: 50%;
+}
+.container_educationLevel input,
+.container_contactCellphone input,
+.container_profession input,
+.container_email input,
+.container_name input,
+.container_lastName input {
+  width: 95%;
+  border-radius: 3px;
+  border: 1px solid black;
+}
+.second_first_container {
+  padding-left: 50px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 5px;
+}
+.first_second_container {
+  display: flex;
+  width: 100%;
+}
+.container_telephone,
+.container_jobTelephone {
+  width: 100%;
+}
+.container_telephone input,
+.container_jobTelephone input {
+  width: 95%;
+  border-radius: 3px;
+  border: 1px solid black;
+}
+.second_second_container {
+  display: flex;
+  width: 100%;
+}
+.container_address,
+.container_jobAddress {
+  width: 100%;
+}
+.container_address input,
+.container_jobAddress input {
+  width: 95%;
+  border-radius: 3px;
+  border: 1px solid black;
+}
+
+.container_idDoc,
+.container_name,
+.container_lastName,
+.container_educationLevel,
+.container_profession,
+.container_address,
+.container_jobAddress,
+.container_telephone,
+.container_jobTelephone,
+.container_contactCellphone,
+.container_email {
+  position: relative;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.container_idDoc p,
+.container_name p,
+.container_lastName p,
+.container_educationLevel p,
+.container_profession p,
+.container_address p,
+.container_jobAddress p,
+.container_telephone p,
+.container_jobTelephone p,
+.container_contactCellphone p,
+.container_email p {
+  position: absolute;
+  color: red;
+  font-size: 11px;
+  bottom: 1%;
+}
+
+/****************************************************/
+
+.submit_button {
+  position: absolute;
+  width: 130px;
+  bottom: 3%;
+  right: 3%;
+  background-color: rgb(14, 17, 56);
+  cursor: pointer;
+  color: #fff;
+  border-radius: 4px;
+  transition: all 0.3s ease-in-out;
+  font-size: 18px;
+}
+.submit_button:hover {
+  background-color: rgb(22, 25, 74);
+}
+.submit_button:disabled {
+  background-color: rgb(22, 25, 74, 0.549);
+  color: #ffffff89;
+  border: none;
+}
+@media (max-width: 600px) {
+  .containerForm {
+    display: flex;
+    direction: column;
+    width: 100%; /* Ajusta el tamaño para pantallas más pequeñas */
+  }
+}

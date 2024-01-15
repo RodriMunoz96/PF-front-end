@@ -1,0 +1,49 @@
+.navlink {
+    text-decoration: none;
+}
+
+/* CONTAINER DATA */
+.dashboard_linked {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+    padding: 10px;
+    width: 140px;
+    border-radius: 3px;
+}
+
+.dashboard_linked h2 {
+    font-size: 12px;
+    color: #fff;
+    padding-right: 50px;
+}
+
+.dashboard_linked img {
+    position: absolute;
+    filter: contrast(0) brightness(100);
+    width: 25px;
+}
+
+.dashboard_not_linked {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+    /* background-color: #167BC4; */
+    width: 140px;
+    border-radius: 3px;
+    padding: 10px;
+}
+
+.dashboard_not_linked h2 {
+    font-size: 12px;
+    color: #fff;
+    padding-right: 50px;
+}
+
+.dashboard_not_linked img {
+    position: absolute;
+    filter: contrast(0) brightness(100);
+    width: 25px;
+}

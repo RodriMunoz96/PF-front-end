@@ -1,0 +1,21 @@
+.containerPages {
+    position: absolute;
+    bottom: 10%;
+    right: 3%;
+    display: flex;
+    gap: 15px;
+}
+.containerPages button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: rgb(6, 195, 195);
+    font-size: 12px;
+}
+.containerPages button:disabled {
+    cursor:auto;
+    color: gray;
+}
+.containerPages small {
+    word-spacing: 2px;
+}

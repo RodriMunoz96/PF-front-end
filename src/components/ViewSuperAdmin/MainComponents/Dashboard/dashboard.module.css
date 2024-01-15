@@ -1,0 +1,50 @@
+.container {
+    height: 100%;
+    width: 100%;
+}
+.navbar {
+    display: flex;
+    flex-direction: column;
+    height: 20%;
+    justify-content: center;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+.navbar h2 {
+    font-size: 35px;
+    color: black;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 1px;
+    margin-left: 55px;
+}
+.navbar_titles {
+    position: absolute;
+    display: flex;
+    margin-left: 35px;
+    bottom: 0px;
+    gap: 80px;
+}
+
+/****/
+.container_table {
+    height: 80%;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/****/
+.navbar_titles button {
+    padding: 0 10px;
+    padding-bottom: 8px;
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+    border-bottom: 2px solid #fff;
+}
+.active_button {
+    color: green;
+    border-bottom: 2px solid green !important;
+}

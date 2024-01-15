@@ -76,14 +76,10 @@ const Login = () => {
                          text: "El nuevo usuario se ha creado correctamente. Redirigiendo a Iniciar Sesión...",
                          icon: "success",
                          showConfirmButton: false,
-
                          timer: 3000,
                          timerProgressBar: true,
                     });
-
-                    setTimeout(() => {
-                         navigate("/login");
-                    }, 3000);
+                    setTimeout(() => { navigate("/login") }, 3000);
                } else {
                     // Guardar el token en el (sessionStorage) si es necesario
                     sessionStorage.setItem("token", response.data.token);

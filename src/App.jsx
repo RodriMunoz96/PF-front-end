@@ -13,7 +13,7 @@ import GradeForm from "./components/ViewSuperAdmin/MainComponents/Dashboard/Grad
 import StudentDetail from "./peges/AdminPages/StudentDetail/StudentDetail";
 import ParentDetail from "./peges/AdminPages/ParentDetail/ParentDetail";
 import ComentarioDetail from "./peges/AdminPages/ComentarioDetail/ComentarioDetail";
-import Testimonios from "./components/Testimonios/testimonios";
+import Testimonios from "./components/Testimonios/Testimonios";
 
 //iportaciones
 

@@ -10,7 +10,6 @@ const FeedbackEdition = () => {
   const navigate = useNavigate();
   const parentId = sessionStorage.getItem("parentId");
   const id = useSelector((state) => state.comentarioId);
-  console.log("el Id del comentario es: ", id);
   const [feedback, setFeedback] = useState({
     easeOfUse: "",
     satisfaction: "",

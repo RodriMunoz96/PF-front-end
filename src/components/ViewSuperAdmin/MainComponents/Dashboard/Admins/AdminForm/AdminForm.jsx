@@ -7,7 +7,7 @@ import { createUser } from '../../../../../../redux/actions/actions-user';
 function AdminForm() {
     const dispatch = useDispatch()
     const navigate = useNavigate()
-    const [ newAdmin, setNewAdmin ] = useState({
+    const [newAdmin, setNewAdmin] = useState({
         email: "",
         password: "",
         type: "Admin",
@@ -45,7 +45,6 @@ function AdminForm() {
 
     return (<>
         <div className={style.container}>
-            <NavLink to={'/viewSuperAdmin/dashboard'} className={style.button_back}>{arrow}&nbsp; Volver al dashboard</NavLink>
             <div className={style.container_details}>
                 <nav>
                     <h1>Registrar nuevo administrador</h1>
@@ -54,26 +53,26 @@ function AdminForm() {
                     <div className={style.container_divs}>
                         <div className={style.container_divs_main}>
                             <label htmlFor="nombre">Nombre:</label>
-                            <input type="text" onChange={onChange} name='nombre'/>
+                            <input type="text" onChange={onChange} name='nombre' />
                         </div>
                         <div className={style.container_divs_main}>
                             <label htmlFor="apellidoPaterno">Apellido paterno:</label>
-                            <input type="text" onChange={onChange} name='apellidoPaterno'/>
+                            <input type="text" onChange={onChange} name='apellidoPaterno' />
                         </div>
                     </div>
                     <div className={style.container_divs}>
                         <div className={style.container_divs_main}>
                             <label htmlFor="apellidoMaterno">Apellido materno:</label>
-                            <input type="text" onChange={onChange} name='apellidoMaterno'/>
+                            <input type="text" onChange={onChange} name='apellidoMaterno' />
                         </div>
                         <div className={style.container_divs_main}>
                             <label htmlFor="email">Email:</label>
-                            <input type="email" onChange={onChange} name='email'/>
+                            <input type="email" onChange={onChange} name='email' />
                         </div>
                     </div>
                     <div className={style.container_divs_last}>
                         <label htmlFor="password">Contraseña:</label>
-                        <input type="text" onChange={onChange} name='password'/>
+                        <input type="text" onChange={onChange} name='password' />
                     </div>
                     <button className={style.btn_send} type='submit'>Enviar</button>
                 </form>

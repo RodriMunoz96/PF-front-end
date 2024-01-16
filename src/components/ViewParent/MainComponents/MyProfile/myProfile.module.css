@@ -64,9 +64,12 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: left;
   flex-direction: column;
-  background-color: whitesmoke;
+  background-color: #5a8bad;
   border-radius: 1em;
+  max-width: 40%;
+  margin: 0 auto;
 }
 
 .parentInfo {

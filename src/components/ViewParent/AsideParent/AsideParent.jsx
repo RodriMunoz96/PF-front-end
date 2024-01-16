@@ -29,7 +29,6 @@ function AsideParent() {
       .then((data) => setComentarios(data))
       .catch((error) => console.error("Error fetching data:", error));
   }, []);
-  console.log("los comentarios son: ", comentarios);
   useEffect(() => {
     for (const comentario of comentarios) {
       if (comentario.Parents[0] && comentario.Parents[0].id === parentId) {
@@ -37,7 +36,6 @@ function AsideParent() {
       }
     }
   }, [comentarios]);
-  console.log("el comentarioId es: ", comentarioId);
   useEffect(() => {
     dispatch(saveComentarioId(comentarioId));
   }, [comentarioId]);
@@ -66,7 +64,6 @@ function AsideParent() {
         {parent && parent.validate && (
           <Links url={"studentForm"} img={myBook} name={"Incribir a mi hijo"} />
         )}
-        {console.log("antes de imprimir hasRated es: ", rated.hasRated)}
         {!rated.hasRated && parent && parent.validate && (
           <Links
             url={"comentario"}

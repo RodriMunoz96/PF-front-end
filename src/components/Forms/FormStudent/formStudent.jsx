@@ -122,7 +122,7 @@ const FormStudent = () => {
       .then(() => {
         Alert.fire({
           title: "Éxito!!",
-          text: "¡Datos enviados correctamente para su validación! Redirigiendo a 'Mi Perfil'...",
+          text: "¡Datos enviados correctamente para su validación! Redirigiendo a 'Mis Hijos'...",
           icon: "success",
           showConfirmButton: false,
           timer: 3000,
@@ -130,8 +130,8 @@ const FormStudent = () => {
         });
 
         setTimeout(() => {
-          navigate("/viewParent/myProfile");
-        }, 1000);
+          navigate("/viewParent/myChildren");
+        }, 3000);
         setImage(`${VITE_CLOUDINARY_RES}`);
         setNewStudent({
           idDocumento: "",

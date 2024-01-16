@@ -9,7 +9,7 @@ function GradeForm() {
     const dispatch = useDispatch()
     const [newGrade, setNewGrade] = useState({
         gradename: "",
-        gradequota: ""
+        gradeQuotaLimit: ""
     })
     const arrow = '<---'
 
@@ -28,7 +28,7 @@ function GradeForm() {
         dispatch(postGrade(newGrade))
         setNewGrade({
             gradename: "",
-            gradequota: ""
+            gradeQuotaLimit: ""
         })
         navigate("/viewSuperAdmin/dashboard")
     }
@@ -45,8 +45,8 @@ function GradeForm() {
                         <input onChange={onChange} type="text" name='gradename' />
                     </div>
                     <div className={style.container_labels}>
-                        <label htmlFor="gradequota">Precio de la cuota:</label>
-                        <input onChange={onChange} type="number" name='gradequota' />
+                        <label htmlFor="gradeQuotaLimit">Cupos:</label>
+                        <input onChange={onChange} type="number" name='gradeQuotaLimit' />
                     </div>
                     <button className={style.btn_send} type='submit'>Enviar</button>
                 </form>

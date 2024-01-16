@@ -9,7 +9,7 @@ import Alert from "sweetalert2";
 const FormParent = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
+  //  const arrow = "<---";
   const [errors, setErrors] = useState({
     fotoDocumento: "",
     idDoc: "",
@@ -28,6 +28,7 @@ const FormParent = () => {
   const [loading, setLoading] = useState(false);
   const [image, setImage] = useState(null);
   const ID = sessionStorage.getItem("userId"); // TRAE EL ID
+  const [imageError, setImageError] = useState("");
 
   const [newParent, setNewParent] = useState({
     fotoDocumento: "", //image
@@ -46,8 +47,52 @@ const FormParent = () => {
     userId: ID,
   });
 
+  const uploadImage = async (e) => {
+    const files = e.target.files;
+    const data = new FormData();
+    data.append("file", files[0]);
+    data.append("upload_preset", "nmxly1pm");
+
+    try {
+      const res = await fetch(
+        `https://api.cloudinary.com/v1_1/dxi3fh6kr/image/upload`,
+        {
+          method: "POST",
+          body: data,
+        }
+      );
+
+      if (!res.ok) {
+        throw new Error("Error al cargar la imagen");
+      }
+
+      const file = await res.json();
+
+      setImage(file.secure_url);
+      setLoading(true);
+      setNewParent({
+        ...newParent,
+        fotoDocumento: file.secure_url,
+      });
+
+      // Limpiar el error de la imagen
+      setImageError("");
+    } catch (error) {
+      console.error("Error al cargar la imagen:", error);
+
+      // Manejar el error de la imagen
+      setImageError(
+        "Hubo un problema al cargar la imagen. Inténtelo de nuevo."
+      );
+    }
+  };
+
   const handleChange = (e) => {
     const { name, value } = e.target;
+
+    if (name === "fotoDocumento") {
+      setImageError("");
+    }
 
     setErrors({
       ...errors,
@@ -60,33 +105,6 @@ const FormParent = () => {
     });
   };
 
-  const uploadImage = async (e) => {
-    const files = e.target.files;
-    const data = new FormData();
-    data.append("file", files[0]);
-    data.append("upload_preset", "nmxly1pm");
-    const res = await fetch(
-      `https://api.cloudinary.com/v1_1/dxi3fh6kr/image/upload`,
-      {
-        method: "POST",
-        body: data,
-      }
-    );
-    const file = await res.json();
-    setImage(file.secure_url);
-    setErrors(
-      validation({
-        ...newParent,
-        fotoDocumento: file.secure_url,
-      })
-    );
-    setLoading(true);
-    setNewParent({
-      ...newParent,
-      fotoDocumento: file.secure_url,
-    });
-  };
-
   const onSubmit = async (e) => {
     e.preventDefault();
 
@@ -95,9 +113,11 @@ const FormParent = () => {
         // En caso de éxito
         Alert.fire({
           title: "¡Éxito!",
-          text: "El formulario se ha enviado correctamente. Redirigiendo a 'Mi Perfil'...",
+          text: "¡Datos enviados correctamente para su validación! Redirigiendo a 'Mi Perfil'...",
           icon: "success",
-          confirmButtonText: "OK",
+          showConfirmButton: false,
+          timer: 3000,
+          timerProgressBar: true,
         });
 
         setErrors({});
@@ -117,7 +137,9 @@ const FormParent = () => {
           tutor: true,
           userId: ID,
         });
-        navigate("/viewParent/myProfile");
+        setTimeout(() => {
+          navigate("/viewParent/myProfile");
+        }, 3000);
       })
       .catch((error) => {
         // En caso de error
@@ -193,9 +215,7 @@ const FormParent = () => {
                         onChange={uploadImage}
                       />
                       <br />
-                      <p>
-                        {errors.fotoDocumento ? errors.fotoDocumento : null}
-                      </p>
+                      <p>{imageError}</p>
                     </>
                   )}
                 </div>

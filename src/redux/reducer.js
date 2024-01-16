@@ -33,6 +33,9 @@ import {
   REMOVE_GRADE,
   FILTER_BY_STATE_GRADE,
   POST_GRADE,
+  GET_VALORACION,
+  GET_HAS_RATED,
+  SAVE_COMENTARIO_ID,
 } from "./action-types";
 
 const initialState = {
@@ -43,7 +46,8 @@ const initialState = {
   allGrades: [],
   allGradesCopy: [],
   gradesDetail: {},
-
+  allComentarios: [],
+  comentarioId: "",
   allUsers: [],
   user: {},
   allStudents: [],
@@ -56,10 +60,27 @@ const initialState = {
   token: null,
   loading: false,
   error: null,
+  rated: {},
 };
 
 const rootReducer = (state = initialState, { type, payload }) => {
   switch (type) {
+    case SAVE_COMENTARIO_ID:
+      return {
+        ...state,
+        comentarioId: payload,
+      };
+    case GET_HAS_RATED:
+      return {
+        ...state,
+        rated: payload,
+      };
+    case GET_VALORACION:
+      return {
+        ...state,
+        valoracionId: payload,
+      };
+
     case GET_ALL_USERS:
       return {
         ...state,

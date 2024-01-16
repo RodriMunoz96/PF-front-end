@@ -1,18 +1,16 @@
 import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import {
-  createValoracion,
-  hasParentRated,
-} from "../../redux/actions/actions-valoraciones";
-import { useDispatch } from "react-redux";
+import { editValoracion } from "../../redux/actions/actions-valoraciones";
+import { useDispatch, useSelector } from "react-redux";
 import Alert from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 import style from "./feedback.module.css";
-
-const FeedbackForm = () => {
+const FeedbackEdition = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const parentId = sessionStorage.getItem("parentId");
+  const id = useSelector((state) => state.comentarioId);
+  console.log("el Id del comentario es: ", id);
   const [feedback, setFeedback] = useState({
     easeOfUse: "",
     satisfaction: "",
@@ -30,14 +28,11 @@ const FeedbackForm = () => {
       ...prevFeedback,
       [name]: value,
     }));
-    console.log(feedback);
   };
 
   const handleSubmit = async (event) => {
-    console.log(feedback);
     event.preventDefault();
-    dispatch(createValoracion({ ...feedback }));
-    dispatch(hasParentRated(parentId));
+    dispatch(editValoracion({ ...feedback }, id));
     await Alert.fire({
       icon: "success",
       title: "Gracias por su opinion! Redirigiendo a 'Mi Perfil'...",
@@ -156,4 +151,4 @@ const FeedbackForm = () => {
   );
 };
 
-export default FeedbackForm;
+export default FeedbackEdition;

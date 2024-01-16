@@ -10,12 +10,15 @@ import {
   Table,
 } from "react-bootstrap";
 import SearchBarStudents from "../SearchBarStudent/SearchBarStudents";
+import PaginationComponent from "../VistaPadres/PaginationComponent";
 
 const VistaEstudiantes = ({ urlEndpoint }) => {
   const [students, setStudents] = useState([]);
   const [ordenAscendente, setOrdenAscendente] = useState(true);
   const [orderBy, setOrderBy] = useState("nombres");
   const [searchBy, setSearchBy] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 6;
 
   VistaEstudiantes.propTypes = {
     urlEndpoint: PropTypes.string.isRequired,
@@ -30,6 +33,7 @@ const VistaEstudiantes = ({ urlEndpoint }) => {
       .then((response) => response.json())
       .then((data) => setStudents(data))
       .catch((error) => console.error("Error fetching data:", error));
+    setCurrentPage(1);
   }, [ordenAscendente, orderBy, urlEndpoint]);
 
   useEffect(() => {
@@ -54,6 +58,10 @@ const VistaEstudiantes = ({ urlEndpoint }) => {
       .toLowerCase()
       .includes(searchBy.toLowerCase())
   );
+
+  const handlePaginate = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
 
   return (
     <Container>
@@ -101,23 +109,35 @@ const VistaEstudiantes = ({ urlEndpoint }) => {
               </tr>
             </thead>
             <tbody>
-              {busquedaStudents.map((student) => (
-                <tr key={student.id}>
-                  <td>
-                    <Link
-                      to={`studentDetail/${student.id}`}
-                    >{`${student.nombres} ${student.apellidoPat} ${student.apellidoMat} `}</Link>
-                  </td>
-                  <td>{student.idDocumento}</td>
-                  <td>{student.contactoEmerg}</td>
-                  <td>{student.validate ? "Verificado✅" : "Pendiente❗"}</td>
-                  <td>{student.estadoPago ? "Pagado✅" : "Adeudado❗"}</td>
-                </tr>
-              ))}
+              {busquedaStudents
+                .slice(
+                  (currentPage - 1) * itemsPerPage,
+                  (currentPage - 1) * itemsPerPage + itemsPerPage
+                )
+                .map((student) => (
+                  <tr key={student.id}>
+                    <td>
+                      <Link
+                        to={`studentDetail/${student.id}`}
+                      >{`${student.nombres} ${student.apellidoPat} ${student.apellidoMat} `}</Link>
+                    </td>
+                    <td>{student.idDocumento}</td>
+                    <td>{student.contactoEmerg}</td>
+                    <td>{student.validate ? "Verificado✅" : "Pendiente❗"}</td>
+                    <td>{student.estadoPago ? "Pagado✅" : "Adeudado❗"}</td>
+                  </tr>
+                ))}
             </tbody>
           </Table>
         </CardBody>
       </Card>
+      <div className="d-flex justify-content-center mt-3 my-4">
+        <PaginationComponent
+          itemsPerPage={itemsPerPage}
+          totalItems={busquedaStudents.length}
+          paginate={handlePaginate}
+        />
+      </div>
     </Container>
   );
 };

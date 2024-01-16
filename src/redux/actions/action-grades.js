@@ -82,7 +82,6 @@ export const filterByStateGrade = (value) => {
 export const postGrade = (data) => {
      return async (dispatch) => {
           try {
-               console.log("this is grade data", data);
                await axios.post(`${VITE_BACK_URL}/grade`, data);
                return dispatch({
                     type: POST_GRADE,

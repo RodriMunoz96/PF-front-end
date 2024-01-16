@@ -19,6 +19,8 @@
   color: whitesmoke;
   background-color: rgb(28, 110, 165);
   border-radius: 0.6em;
+  position: absolute;
+  top: 2%;
 
   &:hover {
     background-color: #007bff;
@@ -33,12 +35,12 @@
   }
 }
 .form {
-  height: 800px;
+  height: 80%;
   width: 80%;
   background-color: whitesmoke;
   box-shadow: 2px 0 6px -1px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.1),
     -2px 0 6px -1px rgba(0, 0, 0, 0.1);
-  position: relative;
+
   border-radius: 5px;
 }
 
@@ -232,10 +234,10 @@
 /****************************************************/
 
 .submit_button {
-  position: absolute;
+  position: relative;
   width: 130px;
   bottom: 3%;
-  right: 3%;
+  left: 43%;
   color: whitesmoke;
   background-color: rgb(26, 98, 146);
   border-radius: 10px;

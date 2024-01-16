@@ -1,55 +1,46 @@
-.containerForm {
-     /* Porcentaje del ancho del contenedor principal */
-     max-width: 100%;
-     /* Establece un ancho máximo para evitar que se estire demasiado */
-     /* Centra el contenedor horizontalmente */
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     position: relative;
+.main_container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow-y: auto;
+  max-height: 100vh;
 }
 
 .container_form {
-     width: 100%;
-     height: 100%;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     position: relative;
-     overflow-y: auto;
-     max-height: 100vh;
+  /* Porcentaje del ancho del contenedor principal */
+  max-width: 100%;
+  /* Establece un ancho máximo para evitar que se estire demasiado */
+  /* Centra el contenedor horizontalmente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: whitesmoke;
+  border: 2px solid rgba(13, 101, 160, 0.5);
+  box-shadow: 0 0 10px rgba(5, 12, 15, 0.3);
 }
 
-/* .button_back_home {
-  position: absolute;
-  text-decoration: none;
-  color: rgb(0, 0, 0);
-  top: 92%;
-  left: 20%;
-  font-size: 20px;
-  transition: all 0.3s ease-in-out;
-} */
-/* .button_back_home:hover {
-  font-size: 26px;
-} */
 .form {
-     height: 100%;
-     width: 100%;
-     background-color: #fff;
-     /* box-shadow: 2px 0 6px -1px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.1),
+  height: 100%;
+  width: 100%;
+  /* box-shadow: 2px 0 6px -1px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.1),
     -2px 0 6px -1px rgba(0, 0, 0, 0.1); */
-     position: relative;
+  position: relative;
 }
 
 /****************************************************/
 
 .navbar {
-     height: 10%;
-     display: flex;
-     align-items: center;
-     padding-left: 0.8em;
-     padding-top: 3em;
-     /* box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); */
+  height: 10%;
+  display: flex;
+  align-items: center;
+  padding-left: 0.8em;
+  padding-top: 1em;
+  font-size: 2em;
+  /* box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); */
 }
 
 /* .navbar h1 {
@@ -61,86 +52,86 @@
 /****************************************************/
 
 .container_label_inputs {
-     padding-top: 40px;
-     padding-left: 20px;
-     display: flex;
-     flex-direction: column;
-     width: 45%;
-     position: relative;
+  padding-top: 40px;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  position: relative;
 }
 
 .container_label_inputs p {
-     color: red;
+  color: red;
 }
 
 .first_container {
-     display: flex;
-     padding-bottom: 30px;
+  display: flex;
+  padding-bottom: 30px;
 }
 
 .first_first_container {
-     display: flex;
-     width: 22%;
-     justify-content: center;
-     align-items: center;
+  display: flex;
+  width: 22%;
+  justify-content: center;
+  align-items: center;
 }
 
 /* IMAGE CLOUDINARY */
 
 .container_image {
-     position: relative;
-     width: 50px;
-     height: 30px;
-     background-color: rgba(128, 128, 128, 0.341);
-     border: 1px solid gray;
-     display: flex;
-     justify-content: center;
-     align-items: center;
+  position: relative;
+  width: 50px;
+  height: 30px;
+  background-color: rgba(128, 128, 128, 0.341);
+  border: 1px solid gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .container_image input[type="file"] {
-     display: none;
+  display: none;
 }
 
 .container_image p {
-     position: absolute;
-     bottom: -12%;
-     color: red;
-     font-size: 11px;
+  position: absolute;
+  bottom: -12%;
+  color: red;
+  font-size: 11px;
 }
 
 .image_student {
-     height: 250px;
-     width: 150px;
+  height: 250px;
+  width: 150px;
 }
 
 .label_image_done {
-     position: absolute;
-     background-color: whitesmoke;
-     top: 0;
-     left: 0;
-     color: black;
-     padding: 1px 4px;
-     padding-bottom: 3px;
-     font-size: 15px;
-     text-align: center;
+  position: absolute;
+  background-color: whitesmoke;
+  top: 0;
+  left: 0;
+  color: black;
+  padding: 1px 4px;
+  padding-bottom: 3px;
+  font-size: 15px;
+  text-align: center;
 }
 
 .label_image_undone {
-     background-color: rgb(255, 255, 255);
-     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-     padding: 2px 5px;
-     border-radius: 3px;
-     text-align: center;
-     cursor: pointer;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  padding: 2px 5px;
+  border-radius: 3px;
+  text-align: center;
+  cursor: pointer;
 }
 
 /* IMAGE CLOUDINARY */
 
 .second_container {
-     padding-left: 0px;
-     height: 150;
-     width: 100;
+  padding-left: 0px;
+  height: 150;
+  width: 100;
 }
 
 .container_telephone,
@@ -149,9 +140,9 @@
 .second_first_container_first_line,
 .second_first_container_second_line,
 .second_first_container_third_line {
-     display: flex;
-     flex-direction: row;
-     width: 100%;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
 }
 
 .container_educationLevel,
@@ -160,7 +151,7 @@
 .container_email,
 .container_name,
 .container_lastName {
-     width: 50%;
+  width: 50%;
 }
 
 .container_educationLevel input,
@@ -169,51 +160,51 @@
 .container_email input,
 .container_name input,
 .container_lastName input {
-     width: 95%;
-     border-radius: 3px;
-     border: 1px solid black;
+  width: 95%;
+  border-radius: 3px;
+  border: 1px solid black;
 }
 
 .second_first_container {
-     padding-left: 50px;
-     display: flex;
-     flex-direction: column;
-     width: 100%;
-     gap: 5px;
+  padding-left: 50px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 5px;
 }
 
 .first_second_container {
-     display: flex;
-     width: 100%;
+  display: flex;
+  width: 100%;
 }
 
 .container_telephone,
 .container_jobTelephone {
-     width: 100%;
+  width: 100%;
 }
 
 .container_telephone input,
 .container_jobTelephone input {
-     width: 95%;
-     border-radius: 3px;
-     border: 1px solid black;
+  width: 95%;
+  border-radius: 3px;
+  border: 1px solid black;
 }
 
 .second_second_container {
-     display: flex;
-     width: 100%;
+  display: flex;
+  width: 100%;
 }
 
 .container_address,
 .container_jobAddress {
-     width: 100%;
+  width: 100%;
 }
 
 .container_address input,
 .container_jobAddress input {
-     width: 95%;
-     border-radius: 3px;
-     border: 1px solid black;
+  width: 95%;
+  border-radius: 3px;
+  border: 1px solid black;
 }
 
 .container_idDoc,
@@ -227,11 +218,11 @@
 .container_jobTelephone,
 .container_contactCellphone,
 .container_email {
-     position: relative;
-     padding-bottom: 20px;
-     display: flex;
-     flex-direction: column;
-     gap: 5px;
+  position: relative;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
 .container_idDoc p,
@@ -245,44 +236,43 @@
 .container_jobTelephone p,
 .container_contactCellphone p,
 .container_email p {
-     position: absolute;
-     color: red;
-     font-size: 11px;
-     bottom: 1%;
+  position: absolute;
+  color: red;
+  font-size: 11px;
+  bottom: 1%;
 }
 
 /****************************************************/
 
 .submit_button {
-     position: relative;
-     width: 8em;
-     bottom: 0.2em;
-     color: whitesmoke;
-     background-color: rgb(26, 98, 146);
-     border-radius: 10px;
-     cursor: pointer;
-     color: #fff;
-     border-radius: 4px;
-     transition: all 0.3s ease-in-out;
-     font-size: 18px;
-     left: 44%;
+  position: relative;
+  width: 8em;
+  color: whitesmoke;
+  background-color: rgb(26, 98, 146);
+  border-radius: 10px;
+  cursor: pointer;
+  color: #fff;
+  border-radius: 4px;
+  transition: all 0.3s ease-in-out;
+  font-size: 18px;
+  left: 44%;
 }
 
 .submit_button:hover {
-     background-color: rgb(22, 25, 74);
+  background-color: rgb(22, 25, 74);
 }
 
 .submit_button:disabled {
-     background-color: rgb(22, 25, 74, 0.549);
-     color: #ffffff89;
-     border: none;
+  background-color: rgb(22, 25, 74, 0.549);
+  color: #ffffff89;
+  border: none;
 }
 
 @media (max-width: 600px) {
-     .containerForm {
-          display: flex;
-          direction: column;
-          width: 100%;
-          /* Ajusta el tamaño para pantallas más pequeñas */
-     }
+  .containerForm {
+    display: flex;
+    direction: column;
+    width: 100%;
+    /* Ajusta el tamaño para pantallas más pequeñas */
+  }
 }

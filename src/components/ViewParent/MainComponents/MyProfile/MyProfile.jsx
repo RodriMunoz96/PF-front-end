@@ -21,7 +21,7 @@ function MyProfile() {
 
   return (
     <div className={style.main_container}>
-      <h1 className={style.title}>Datos personales</h1>
+      <h2 className={style.title}>Datos personales</h2>
       <div>
         <br />
         <div>

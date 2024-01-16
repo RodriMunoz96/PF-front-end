@@ -2,6 +2,7 @@ const textRegex = /^[a-zA-Z\s]+$/;
 const numberRegex = /^[0-9]+$/;
 const grupoSanguineoRegex = /^(A\+|A-|B\+|B-|AB\+|AB-|O\+|O-)$/;
 const integerRegex = /^\d+$/;
+//const fechaRegex = /^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/(19|20)\d\d$/;
 
 const validation = (newStudent, errors, setErrors, event) => {
   switch (event.target.name) {
@@ -104,10 +105,15 @@ const validation = (newStudent, errors, setErrors, event) => {
       break;
 
     case "fechNac":
-      if (!newStudent.fechNac || new Date(newStudent.fechNac) > new Date()) {
+      if (
+        !newStudent.fechNac ||
+        //   !fechaRegex.test(newStudent.fechNac) ||
+        new Date(newStudent.fechNac) > new Date()
+      ) {
         setErrors({
           ...errors,
-          fechNac: "La fecha ingresada no puede ser del futuro",
+          fechNac:
+            "La fecha ingresada no es valida, debe ser en formato dd/mm/aaaa",
         });
       } else {
         setErrors({

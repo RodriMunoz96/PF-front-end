@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Links from "./Links/Links";
 import style from "./asideParent.module.css";
-import { Collapse } from "react-bootstrap";
+// import { Collapse } from "react-bootstrap";
 import myProfile from "../../../Img/imgViewParent/iconMyProfile.png";
 import myChildren from "../../../Img/imgViewParent/iconChild.png";
 import myBook from "../../../Img/imgViewParent/iconBook.png";
@@ -49,7 +49,7 @@ function AsideParent() {
 
   const parent = useSelector((state) => state.parent);
   const rated = useSelector((state) => state.rated);
-  const [open, setOpen] = useState(false);
+  // const [open, setOpen] = useState(false);
   return (
     <aside className={style.container_aside}>
       <div className={style.container_dad_name}>
@@ -81,21 +81,7 @@ function AsideParent() {
             name={"Modificar mi comentario"}
           />
         )}
-        {parent && !parent.validate && (
-          <div>
-            <Collapse in={open}>
-              <div>
-                <p>
-                  Su perfil está en proceso de validación, una vez el
-                  administrador lo valide, podrá inscribir a sus estudiantes.
-                </p>
-              </div>
-            </Collapse>
-            <h5 onClick={() => setOpen(!open)} style={{ cursor: "pointer" }}>
-              {!open ? "Ver nota" : "Cerrar nota"}
-            </h5>
-          </div>
-        )}
+
         <LogoutButton img={logout} className={style.container_links} />
       </div>
     </aside>
@@ -103,3 +89,39 @@ function AsideParent() {
 }
 
 export default AsideParent;
+
+/* {
+  !parent.validate && (
+    <div>
+      <Collapse in={open}>
+        <div>
+          <p>
+            Su perfil está en proceso de validación, una vez el administrador lo
+            valide, podrá inscribir a sus estudiantes.
+          </p>
+        </div>
+      </Collapse>
+      <h5 onClick={() => setOpen(!open)} style={{ cursor: "pointer" }}>
+        {!open ? "Ver nota" : "Cerrar nota"}
+      </h5>
+    </div>
+  );
+} */
+
+/*{
+  parent && !parent.validate && (
+    <div>
+      <Collapse in={open}>
+        <div>
+          <p>
+            Su perfil está en proceso de validación, una vez el administrador lo
+            valide, podrá inscribir a sus estudiantes.
+          </p>
+        </div>
+      </Collapse>
+      <h5 onClick={() => setOpen(!open)} style={{ cursor: "pointer" }}>
+        {!open ? "Ver nota" : "Cerrar nota"}
+      </h5>
+    </div>
+  );
+} */

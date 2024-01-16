@@ -165,12 +165,13 @@ const FormStudent = () => {
       });
   };
   return (
-    <div className={style.container_form}>
+    <div className={style.main_container}>
       <form onSubmit={onSubmit} className={style.form}>
         <nav className={style.navbar}>
-          <h1>Información general del estudiante</h1>
+          <h2>Información general del estudiante</h2>
         </nav>
-        <div className={style.containerForm}>
+        <br />
+        <div className={style.container_form}>
           <div className={style.container_label_inputs}>
             {
               <>
@@ -283,12 +284,21 @@ const FormStudent = () => {
             <p>{errors.alergias ? errors.alergias : null}</p>
 
             <label htmlFor="grupoSanguineo">Grupo sanguineo:</label>
-            <input
+            <select
+              name="grupoSanguineo"
               value={newStudent.grupoSanguineo}
               onChange={handleChange}
-              type="text"
-              name="grupoSanguineo"
-            />
+            >
+              <option>Seleccione un tipo</option>
+              <option value="O+">O+</option>
+              <option value="O-">O-</option>
+              <option value="A+">A+</option>
+              <option value="A-">A-</option>
+              <option value="B+">B+</option>
+              <option value="B-">B-</option>
+              <option value="AB+">AB+</option>
+              <option value="AB-">AB-</option>
+            </select>
             <p>{errors.grupoSanguineo ? errors.grupoSanguineo : null}</p>
 
             <label htmlFor="contactoEmerg">Contacto de emergencia:</label>

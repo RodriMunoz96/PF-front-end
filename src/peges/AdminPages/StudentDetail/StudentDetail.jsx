@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Card, Container, Button } from "react-bootstrap";
+import { Card, Container, Button, Modal, Collapse } from "react-bootstrap";
 import { useParams, Link } from "react-router-dom";
 const { VITE_BACK_URL } = import.meta.env;
 
@@ -17,7 +17,7 @@ const StudentDetail = () => {
         const data = await response.json();
         setStudent(data); // Establece la información del estudiante en el estado
       } catch (error) {
-        console.error("Error fetching student data:", error);
+        throw new Error(`Error fetching student data: ${error.message}`);
       }
     };
 
@@ -25,6 +25,50 @@ const StudentDetail = () => {
   }, [id]); // Ejecuta la solicitud al servidor cuando cambia el ID en la URL
 
   const [validationSuccess, setValidationSuccess] = useState(false);
+  const [suspension, setSuspension] = useState(false);
+  const [showConfirmation, setShowConfirmation] = useState(false);
+
+  const handleShowConfirmation = () => {
+    setShowConfirmation(true);
+  };
+
+  const handleCloseConfirmation = () => {
+    setShowConfirmation(false);
+  };
+
+  const handleSuspendStudent = async () => {
+    try {
+      const response = await fetch(`${VITE_BACK_URL}/estudiantes/${id}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ state: false }), // Cambiar state a false para suspender
+      });
+
+      if (response.ok) {
+        // Si la solicitud es exitosa, actualizar los detalles del estudiante localmente
+        setStudent({ ...student, state: false });
+        setSuspension(true);
+      } else {
+        console.error("Error al suspender al estudiante");
+      }
+    } catch (error) {
+      console.error("Error al realizar la solicitud PUT:", error);
+    }
+  };
+
+  const handleConfirmSuspend = async () => {
+    await handleSuspendStudent();
+    setShowConfirmation(false);
+  };
+
+  const handleHideAlert = () => {
+    setValidationSuccess(false);
+  };
+  const hideAlertSuspension = () => {
+    setSuspension(false);
+  };
 
   const handleValidateStudent = async () => {
     try {
@@ -116,14 +160,61 @@ const StudentDetail = () => {
               ? "Verificado"
               : `Validar Estudiante ${nombres} ${apellidoPat}`}
           </Button>
+          <Button
+            className="btn btn-danger mb-3 mx-2"
+            onClick={handleShowConfirmation}
+            disabled={!validate} // Desactiva el botón si validate es false
+          >
+            Suspender a {`${nombres} ${apellidoPat}`}
+          </Button>
+
+          {/* Confirmación adicional */}
+          <Modal show={showConfirmation} onHide={handleCloseConfirmation}>
+            <Modal.Header closeButton>
+              <Modal.Title>Confirmación de Suspensión</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              <p>
+                Esta acción es irreversible. Solo el SuperAdmin podrá reactivar
+                al usuario.
+              </p>
+            </Modal.Body>
+            <Modal.Footer>
+              <Button variant="secondary" onClick={handleCloseConfirmation}>
+                Cancelar
+              </Button>
+              <Button variant="danger" onClick={handleConfirmSuspend}>
+                Confirmar Suspensión
+              </Button>
+            </Modal.Footer>
+          </Modal>
           <Link to="/Admin" className="btn btn-primary mb-3">
             Volver
           </Link>
-          {validationSuccess && (
+          <Collapse in={validationSuccess}>
             <div className="alert alert-success mt-3" role="alert">
               ¡Validación exitosa!
+              <Button
+                onClick={handleHideAlert}
+                className="close mx-1"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </Button>
             </div>
-          )}
+          </Collapse>
+          <Collapse in={suspension}>
+            <div className="alert alert-danger mt-3" role="alert">
+              ¡Estudiante Suspendido!
+              <Button
+                onClick={hideAlertSuspension}
+                className="close mx-3"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </Button>
+            </div>
+          </Collapse>
         </Card.Body>
       </Card>
     </Container>

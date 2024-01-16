@@ -39,7 +39,7 @@ function MyChildren() {
                parentid: filteredParentId,
                id: toString(Math.floor(10000000 + Math.random() * 89999999)),
                title: "Inscripcion",
-               unit_price: 1500,
+               unit_price: 5,
                quantity: 1,
           };
           try {

@@ -14,7 +14,7 @@ import StudentDetail from "./peges/AdminPages/StudentDetail/StudentDetail";
 import ParentDetail from "./peges/AdminPages/ParentDetail/ParentDetail";
 import ComentarioDetail from "./peges/AdminPages/ComentarioDetail/ComentarioDetail";
 import Testimonios from "./components/Testimonios/Testimonios";
-
+import GradeEdit from "./components/ViewSuperAdmin/MainComponents/Dashboard/Grades/EditGrade";
 //iportaciones
 
 function App() {
@@ -33,6 +33,7 @@ function App() {
         <Route exact path="/addGrade" element={<GradeForm />} />
         <Route path="/admin/studentDetail/:id" element={<StudentDetail />} />
         <Route path="/admin/parentDetail/:id" element={<ParentDetail />} />
+        <Route path="/grades/edit/:id" element={<GradeEdit />} />
         <Route path="/testimonios" element={<Testimonios />} />
         <Route
           path="/admin/comentarioDetail/:id"
@@ -40,6 +41,7 @@ function App() {
         />
         <Route exact path="/*" element={<NotFound />} />
       </Routes>
+      
     </>
   );
 }

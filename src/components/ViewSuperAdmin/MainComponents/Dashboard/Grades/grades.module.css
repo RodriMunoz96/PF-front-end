@@ -5,6 +5,7 @@
     box-shadow: 0px 6px 9px -4px rgba(0, 0, 0, 0.45);
     position: relative;
 }
+
 .container_link {
     position: absolute;
     right: 1.5%;
@@ -18,11 +19,13 @@
     width: 170px;
     text-align: center;
 }
+
 .container_link:hover {
     background-color: black;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
     color: #fff;
 }
+
 /****/
 
 .container_searchbar {
@@ -36,6 +39,7 @@
     height: 35px;
     margin: 25px 1px 0px 20px;
 }
+
 .container_searchbar input {
     width: 100%;
     border: none;
@@ -43,6 +47,7 @@
     padding-left: 5px;
     height: 32px;
 }
+
 .container_searchbar button {
     cursor: pointer;
     background-color: transparent;
@@ -59,42 +64,49 @@
     border-collapse: collapse;
     text-align: center;
 }
+
 .table thead {
     background-color: rgba(17, 25, 40);
     color: #fff;
     border-top: 1px solid rgba(0, 0, 0, 0.3);
 }
+
 .table td button {
     cursor: pointer;
     background: none;
     border: none;
 }
+
 .table .row td {
-    height: 30px;
-    font-size: 14px;
-    padding: 10px 5px;
+    height: 20px;
+    font-size: 12px;
+    padding: 5px;
     font-weight: 100;
     color: black;
-    font-family:'Times New Roman', Times, serif;
+    font-family: 'Times New Roman', Times, serif;
 }
-.row_even{
+
+.row_even {
     background-color: #e9e8e8;
 }
+
 .row_odd {
     background-color: #fff;
 }
+
 /*****/
 .overlay {
     display: flex;
     justify-content: center;
     align-items: center;
     position: fixed;
-    top: 0; 
-    left: 0; 
-    width: 100%; 
-    height: 100%;  
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-color: rgba(0, 0, 0, 0.5)
 }
+
 .container_message {
     position: absolute;
     bottom: 3%;
@@ -107,6 +119,7 @@
     font-size: 12px;
     gap: 5px;
 }
+
 .container_message button {
     background-color: transparent;
     border: none;
@@ -114,29 +127,34 @@
     color: rgb(0, 128, 94);
     cursor: pointer;
 }
+
 .container_message small {
     position: absolute;
     left: 1%;
     font-size: 13px;
 }
+
 /*******/
-.container_selects{
+.container_selects {
     display: flex;
     gap: 0px;
     padding: 20px 20px;
 }
+
 .container_selects select {
     border: none;
     text-align: end;
     padding-right: 2px;
     width: 100px;
 }
+
 .container_selects select option {
     background-color: #e3dbdb;
     font-family: Arial, Helvetica, sans-serif;
 }
+
 /******************/
-.container_status_modify{
+.container_status_modify {
     position: relative;
     height: 300px;
     width: 500px;
@@ -150,6 +168,7 @@
     align-items: center;
     justify-content: center;
 }
+
 .container_status_modify button:first-child {
     background: transparent;
     border: none;
@@ -160,12 +179,15 @@
     font-size: 18px;
     transition: all .3s ease-in-out;
 }
-.container_status_modify button:first-child:hover{
+
+.container_status_modify button:first-child:hover {
     transform: scale(1.1);
 }
+
 .container_status_modify h2 {
     text-align: center;
 }
+
 .button_action {
     background-color: transparent;
     position: absolute;
@@ -175,8 +197,10 @@
     border-radius: 4px;
     transition: all .3s ease-in-out;
 }
+
 .button_action:hover {
     color: #fff;
-    background-color:rgb(39, 44, 52);
+    background-color: rgb(39, 44, 52);
 }
+
 /******************/

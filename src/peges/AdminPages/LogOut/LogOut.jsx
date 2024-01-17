@@ -13,10 +13,10 @@ const LogoutButton = () => {
      const dispatch = useDispatch();
      if (subtype === 2) {
           const { logout } = useAuth0();
-          //    const onLogout = () => {
-          //        // Realiza acciones adicionales después del logout
-          //        console.log("Usuario deslogueado correctamente");
-          //    };
+             const onLogout = () => {
+                 // Realiza acciones adicionales después del logout
+                 console.log("Usuario deslogueado correctamente");
+              };
 
           sessionStorage.removeItem("token");
           sessionStorage.removeItem("type");
@@ -31,7 +31,7 @@ const LogoutButton = () => {
                          logout({
                               logoutParams: {
                                    returnTo: window.location.origin,
-                                   //onRedirectCallback: onLogout,
+                                   onRedirectCallback: onLogout,
                               },
                          })
                     }

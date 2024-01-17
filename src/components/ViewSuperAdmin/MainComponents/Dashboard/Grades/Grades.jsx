@@ -74,7 +74,7 @@ function Grades() {
                     <tr>
                         <th></th>
                         <th>Nombre</th>
-                        <th>Cuota</th>
+                        <th>Cupos</th>
                         <th>Estado</th>
                     </tr>
                 </thead>
@@ -88,7 +88,7 @@ function Grades() {
                                     <tr className={`${style.row} ${rowClass}`} key={grade.id}>
                                         <td><button onClick={() => openStatus(grade.id)}>⁝</button></td>
                                         <td>{grade.gradename}</td>
-                                        <td>{grade.gradequota}</td>
+                                        <td>{grade.gradeQuotaLimit - grade.gradequota}</td>
                                         <td>{grade.state ? "Activo" : "Inactivo"}</td>
                                     </tr>
                                 )

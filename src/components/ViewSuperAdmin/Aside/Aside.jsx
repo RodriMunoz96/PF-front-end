@@ -2,6 +2,8 @@ import style from './aside.module.css'
 import Links from './Links/Links';
 import dashboard from '../../../Img/imgViewParent/dashboard.png'
 import LogoutButton from "../../../peges/AdminPages/LogOut/LogOut";
+import admin from '../../../Img/adminlogo.png'
+import grade from '../../../Img/gradelogo.png'
 
 const Aside = () => {
     return (<>
@@ -12,8 +14,8 @@ const Aside = () => {
             <hr />
             <div className={style.container_links}>
                 <Links url={'dashboard'} img={dashboard} name={'Dashboard'} />
-                <Links url={'admins'} img={dashboard} name={'Añadir admin'} />
-                <Links url={'grades'} img={dashboard} name={'Añadir grado'} />
+                <Links url={'admins'} img={admin} name={'Añadir admin'} />
+                <Links url={'grades'} img={grade} name={'Añadir grado'} />
                 <LogoutButton />
             </div>
         </aside>

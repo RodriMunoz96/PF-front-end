@@ -4,7 +4,7 @@
   display: flex;
   justify-content: center;
   position: relative;
-  background-color: #3d6683;
+  background: linear-gradient(to left, #13598b, #6f99bb);
   color: #fff;
   padding: 0 10px;
 }

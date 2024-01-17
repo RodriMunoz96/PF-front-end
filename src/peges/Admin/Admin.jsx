@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Container, Row, Col, Nav, Button } from "react-bootstrap";
-import img3 from "../../Img/img3.png";
+import style from "./admin.module.css";
 // import { useNavigate } from "react-router-dom";
 
 // Importa tus componentes para cada página
@@ -22,67 +22,89 @@ import VerComentariosFeedback from "../AdminPages/VerComentarios/VerComentarios"
 // import VistaEstudiantes from "./AdminPages/VistaEstudiantes";
 
 const Admin = () => {
-    // const navigate = useNavigate();
-    const [currentPage, setCurrentPage] = useState(null);
+  // const navigate = useNavigate();
+  const [currentPage, setCurrentPage] = useState(null);
+  const adminName = sessionStorage.getItem("nombre");
 
-    useEffect(() => {
-        // Al cargar el componente, establece la página inicial
-        setCurrentPage("VerTodosPadres");
-    }, []);
+  useEffect(() => {
+    // Al cargar el componente, establece la página inicial
+    setCurrentPage("VerTodosPadres");
+  }, []);
 
-    const renderPage = (page) => {
-        setCurrentPage(page);
-    };
+  const renderPage = (page) => {
+    setCurrentPage(page);
+  };
 
-    return (
-        <Container fluid>
-            <Row>
-                <Col
-                    md={3}
-                    lg={2}
-                    style={{ backgroundColor: "#0b4c7b" }}
-                    className="sidebar"
-                >
-                    <Nav className="flex-column">
-                        <div className="d-flex align-items-center justify-content-center sidebar-header">
-                            <img src={img3} alt="Logo" className="img-fluid" />
-                        </div>
-                        <Button
-                            className="my-2"
-                            onClick={() => renderPage("VerTodosPadres")}
-                        >
-                            Todos los Padres
-                        </Button>
+  return (
+    <Container fluid>
+      <Row>
+        <Col
+          md={3}
+          lg={2}
+          style={{ backgroundColor: "#0b4c7b" }}
+          className={`sidebar ${style.aside_container}`}
+        >
+          <Nav className="flex-column">
+            <div className="d-flex align-items-center justify-content-center sidebar-header">
+              <h1 className={style.admin_name}>
+                BIENVENIDO A TU SESION <br /> <br />{" "}
+                {adminName ? adminName : "administrador"}
+              </h1>
+            </div>
+            <hr className={style.separator} />
+            <div className="my-4">
+              <Button
+                className="my-4 w-100"
+                onClick={() => renderPage("VerTodosPadres")}
+              >
+                Todos los Padres
+              </Button>
 
-                        <Button className="my-2" onClick={() => renderPage("AllStudents")}>
-                            Todos los Estudiantes
-                        </Button>
+              <Button
+                className="my-4 w-100"
+                onClick={() => renderPage("AllStudents")}
+              >
+                Todos los Estudiantes
+              </Button>
 
-                        <Button className="my-2" onClick={() => renderPage("Comentarios")}>
-                            Comentarios
-                        </Button>
-                    </Nav>
-                    <LogoutButton />
-                </Col>
-                <Col md={9} lg={10} className="main-content">
-                    {currentPage === "VerTodosPadres" && <PadresTodos />}
-                    {currentPage === "AllStudents" && <EstudiantesTodos />}
-                    {currentPage === "Comentarios" && <VerComentariosFeedback />}
-                </Col>
-            </Row>
-        </Container>
-    );
+              <Button
+                className="my-4 w-100"
+                onClick={() => renderPage("Comentarios")}
+              >
+                Comentarios
+              </Button>
+            </div>
+          </Nav>
+          <div className="d-flex justify-content-center mt-3">
+            <LogoutButton />
+          </div>
+        </Col>
+        <Col md={9} lg={10} className={`main-content ${style.main_container}`}>
+          {currentPage === "VerTodosPadres" && <PadresTodos />}
+          {currentPage === "AllStudents" && <EstudiantesTodos />}
+          {currentPage === "Comentarios" && <VerComentariosFeedback />}
+        </Col>
+      </Row>
+    </Container>
+  );
 };
 
 export default Admin;
 
-{/* <Button className="my-2" onClick={() => renderPage("Inicio")}>
+{
+  /* <Button className="my-2" onClick={() => renderPage("Inicio")}>
 Inicio
-</Button> */}
-{/* CONTENIDO ADMIN */ }
+</Button> */
+}
+{
+  /* CONTENIDO ADMIN */
+}
 
-{/* CONTENIDO PADRE */ }
-{/* <Button
+{
+  /* CONTENIDO PADRE */
+}
+{
+  /* <Button
 className="my-2"
 onClick={() => renderPage("VerifiedParents")}
 >
@@ -93,9 +115,13 @@ className="my-2"
 onClick={() => renderPage("PendingParents")}
 >
 Padres Pendientes
-</Button> */}
-{/* CONTENIDO ALUMNO */ }
-{/* <Button
+</Button> */
+}
+{
+  /* CONTENIDO ALUMNO */
+}
+{
+  /* <Button
 className="my-2"
 onClick={() => renderPage("VerifiedStudents")}
 >
@@ -106,12 +132,25 @@ className="my-2"
 onClick={() => renderPage("PendingStudents")}
 >
 Estudiantes Pendientes
-</Button> */}
-{/* Renderizar el componente correspondiente según la página actual */ }
-{/* {currentPage === "Inicio" && <VistaFiltrada />} */ }
-{/* {currentPage === "VerifiedParents" && <PadresActivos />}
-{currentPage === "PendingParents" && <PadresPendientes />} */}
-{/* ESTUDIANTES */ }
-{/* {currentPage === "VerifiedStudents" && <VerifiedStudents />}
-{currentPage === "PendingStudents" && <PendingStudents />} */}
-{/* Agrega más condiciones según sea necesario */ }
+</Button> */
+}
+{
+  /* Renderizar el componente correspondiente según la página actual */
+}
+{
+  /* {currentPage === "Inicio" && <VistaFiltrada />} */
+}
+{
+  /* {currentPage === "VerifiedParents" && <PadresActivos />}
+{currentPage === "PendingParents" && <PadresPendientes />} */
+}
+{
+  /* ESTUDIANTES */
+}
+{
+  /* {currentPage === "VerifiedStudents" && <VerifiedStudents />}
+{currentPage === "PendingStudents" && <PendingStudents />} */
+}
+{
+  /* Agrega más condiciones según sea necesario */
+}

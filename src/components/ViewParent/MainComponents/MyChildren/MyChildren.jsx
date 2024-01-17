@@ -87,17 +87,23 @@ function MyChildren() {
                       más información debe contactarse con el administrador.
                     </p>
                   )}
-                  {student.state && !student.estadoPago && student.validate ? (
-                    <select name="grados" id="grados" onChange={onChangeGrade}>
-                      <option value="" selected>
-                        Seleccionar un grado
-                      </option>
-                      {grados.map((grado) => (
-                        <option key={grado.id} value={grado.id}>
-                          {grado.gradename}
+                  {student.state && student.validate ? (
+                    !student.estadoPago && (
+                      <select
+                        name="grados"
+                        id="grados"
+                        onChange={onChangeGrade}
+                      >
+                        <option value="" selected>
+                          Seleccionar un grado
                         </option>
-                      ))}
-                    </select>
+                        {grados.map((grado) => (
+                          <option key={grado.id} value={grado.id}>
+                            {grado.gradename}
+                          </option>
+                        ))}
+                      </select>
+                    )
                   ) : (
                     <p>
                       El estudiante está en proceso de validación por parte del

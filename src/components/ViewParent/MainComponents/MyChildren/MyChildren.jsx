@@ -87,7 +87,7 @@ function MyChildren() {
                       más información debe contactarse con el administrador.
                     </p>
                   )}
-                  {student.state && student.estadoPago && student.validate ? (
+                  {student.state && !student.estadoPago && student.validate ? (
                     <select name="grados" id="grados" onChange={onChangeGrade}>
                       <option value="" selected>
                         Seleccionar un grado

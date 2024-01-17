@@ -141,16 +141,6 @@ function Admins() {
                 pageSize={adminsPerPage}
                 onPageChange={onPageChange}
             />
-            <div className={style.container_message}>
-                <p><b>¿No encontraste lo que buscabas?</b> Es posible que algunos admins
-                    estén ocultas debido a los filtros que has seleccionado.</p>
-                <button className={style.show_admins} onClick={showAllUsers}>Mostrar todos los admins</button>
-                {
-                    allAdminsCopy.length !== 1
-                        ? <small>{allAdminsCopy.length} usuarios encontrados</small>
-                        : <small>{allAdminsCopy.length} usuario encontrado</small>
-                }
-            </div>
         </div>
         {
             detailOpen ? <div className={style.overlay}>

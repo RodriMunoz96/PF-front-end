@@ -81,8 +81,13 @@ function MyChildren() {
                     Apellidos: {student.apellidoPat} {student.apellidoMat}
                   </Card.Text>
                   <Card.Text>Documento: {student.idDocumento}</Card.Text>
-
-                  {student.validate ? (
+                  {!student.state && (
+                    <p>
+                      EL estudiante se encuentra suspendido temporalmente, para
+                      más información debe contactarse con el administrador.
+                    </p>
+                  )}
+                  {student.state && student.estadoPago && student.validate ? (
                     <select name="grados" id="grados" onChange={onChangeGrade}>
                       <option value="" selected>
                         Seleccionar un grado
@@ -102,7 +107,8 @@ function MyChildren() {
                   {gradoSeleccionado && !gradoSeleccionado.state && (
                     <p>El curso seleccionado no tiene cupos</p>
                   )}
-                  {!student.estadoPago &&
+                  {student.state &&
+                    !student.estadoPago &&
                     student.validate &&
                     gradoSeleccionado &&
                     gradoSeleccionado.state && (
@@ -116,7 +122,7 @@ function MyChildren() {
                         Pagar Aquí
                       </Button>
                     )}
-                  {student.estadoPago && (
+                  {student.state && student.estadoPago && (
                     <p>
                       Este estudiante finalizó el proceso de inscripción con
                       éxito en el grado seleccionado.

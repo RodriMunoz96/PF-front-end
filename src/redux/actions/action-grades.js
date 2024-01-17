@@ -41,18 +41,17 @@ export const getGradeById = (id) => {
 
 export const updateGrade = ({ id, grade }) => {
      return async (dispatch) => {
-          try {
-               const { data } = await axios.put(`${VITE_BACK_URL}grade/${id}`, grade);
-               return dispatch({
-                    type: UPDATE_GRADE,
-                    payload: data,
-               });
-          } catch (error) {
-               alert(error.message);
-          }
+       try {
+          const { data } = await axios.put(`${VITE_BACK_URL}/grade/${id}`, grade); // Add a slash here
+         return dispatch({
+           type: UPDATE_GRADE,
+           payload: data,
+         });
+       } catch (error) {
+         alert(error.message);
+       }
      };
-};
-
+   };
 export const removeGrade = (id) => {
      return async (dispatch) => {
           try {

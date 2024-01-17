@@ -1,10 +1,9 @@
 import { NavLink } from "react-router-dom";
-import { Button } from "react-bootstrap"; // Asegúrate de importar Button de react-bootstrap
+import { Button } from "react-bootstrap";
 import style from "./myProfile.module.css";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getParent } from "../../../../redux/actions/actions-parents";
-//import productos from "../../../../../productos.json";
 
 function MyProfile() {
   const dispatch = useDispatch();
@@ -53,6 +52,14 @@ function MyProfile() {
               <p>
                 <strong>Dirección del trabajo:</strong> {parent.jobAddress}
               </p>
+              {!parent.state && (
+                <p>
+                  <strong>
+                    El padre se encuentra suspendido temporalmente, para más
+                    información contactar al administrador escolar.
+                  </strong>
+                </p>
+              )}
             </div>
           ) : (
             <div>

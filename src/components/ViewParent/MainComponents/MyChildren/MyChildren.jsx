@@ -81,18 +81,29 @@ function MyChildren() {
                     Apellidos: {student.apellidoPat} {student.apellidoMat}
                   </Card.Text>
                   <Card.Text>Documento: {student.idDocumento}</Card.Text>
-
-                  {student.validate ? (
-                    <select name="grados" id="grados" onChange={onChangeGrade}>
-                      <option value="" selected>
-                        Seleccionar un grado
-                      </option>
-                      {grados.map((grado) => (
-                        <option key={grado.id} value={grado.id}>
-                          {grado.gradename}
+                  {!student.state && (
+                    <p>
+                      EL estudiante se encuentra suspendido temporalmente, para
+                      más información debe contactarse con el administrador.
+                    </p>
+                  )}
+                  {student.state && student.validate ? (
+                    !student.estadoPago && (
+                      <select
+                        name="grados"
+                        id="grados"
+                        onChange={onChangeGrade}
+                      >
+                        <option value="" selected>
+                          Seleccionar un grado
                         </option>
-                      ))}
-                    </select>
+                        {grados.map((grado) => (
+                          <option key={grado.id} value={grado.id}>
+                            {grado.gradename}
+                          </option>
+                        ))}
+                      </select>
+                    )
                   ) : (
                     <p>
                       El estudiante está en proceso de validación por parte del
@@ -102,7 +113,8 @@ function MyChildren() {
                   {gradoSeleccionado && !gradoSeleccionado.state && (
                     <p>El curso seleccionado no tiene cupos</p>
                   )}
-                  {!student.estadoPago &&
+                  {student.state &&
+                    !student.estadoPago &&
                     student.validate &&
                     gradoSeleccionado &&
                     gradoSeleccionado.state && (
@@ -116,7 +128,7 @@ function MyChildren() {
                         Pagar Aquí
                       </Button>
                     )}
-                  {student.estadoPago && (
+                  {student.state && student.estadoPago && (
                     <p>
                       Este estudiante finalizó el proceso de inscripción con
                       éxito en el grado seleccionado.

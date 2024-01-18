@@ -37,25 +37,25 @@ function MyChildren() {
 
   //MercadoPago
   const FuncionComprar = async (studentId, gradeId) => {
-    const producto = {
-      studentId,
-      gradeId,
-      parentid: filteredParentId,
-      id: toString(Math.floor(10000000 + Math.random() * 89999999)),
-      title: "Inscripcion",
-      unit_price: 5,
-      quantity: 1,
-    };
-    try {
-      const response = await axios.post(
-        `${VITE_BACK_URL}/mercadopago`,
-        producto
-      );
-      window.location.href = response.data;
-    } catch (error) {
-      console.error("Error al realizar la solicitud:", error);
-    }
+  const producto = {
+    studentId,
+    gradeId,
+    parentid: filteredParentId,
+    id: toString(Math.floor(10000000 + Math.random() * 89999999)),
+    title: "Inscripcion",
+    unit_price: 5,
+    quantity: 1,
   };
+  try {
+    const response = await axios.post(
+      `${VITE_BACK_URL}/mercadopago`,
+      producto
+    );
+    window.open(response.data, '_blank');
+  } catch (error) {
+    console.error("Error al realizar la solicitud:", error);
+  }
+};
   //----
 
   const onChangeGrade = (e) => {
@@ -119,14 +119,12 @@ function MyChildren() {
                     gradoSeleccionado &&
                     gradoSeleccionado.state && (
                       <Button
-                        name="paymet"
-                        onClick={() =>
-                          FuncionComprar(student.id, idGradoSeleccionado)
-                        }
-                        className={style.link_to_paymet}
+                        name="payment"
+                        onClick={() => FuncionComprar(student.id, idGradoSeleccionado)}
+                        className={style.link_to_payment}
                       >
                         Pagar Aquí
-                      </Button>
+                    </Button>
                     )}
                   {student.state && student.estadoPago && (
                     <p>

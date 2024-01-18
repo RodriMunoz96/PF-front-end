@@ -51,6 +51,13 @@ function GradeEdit() {
   };
   return (
     <div className={style.main_container}>
+      <button
+        onClick={() => (window.location.href = "/viewSuperAdmin/dashboard")}
+        className={style.returnButton}
+      >
+        Volver a la pantalla principal
+      </button>
+
       <form onSubmit={handleSubmit} className={style.form_container}>
         <h2 className={style.title}>Editar Grado</h2>
         <label className={style.label}>

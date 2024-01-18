@@ -68,14 +68,6 @@ function Grades() {
           <input type="text" placeholder="Busca por nombre" />
           <button>🔍︎</button>
         </div>
-        <div className={style.container_selects}>
-          <b>Estado:</b>
-          <select onChange={filterRol}>
-            <option value="todos">Todos</option>
-            <option value="active">Activos</option>
-            <option value="banned">Inactivos</option>
-          </select>
-        </div>
         <table className={style.table}>
           <thead>
             <tr>
@@ -83,7 +75,6 @@ function Grades() {
               <th>Nombre</th>
               <th>Cupos</th>
               <th>Estado</th>
-              <th>Editar</th>
             </tr>
           </thead>
           <tbody>
@@ -91,36 +82,6 @@ function Grades() {
               ? currentPageData.map((grade, index) => {
                   const rowClass =
                     index % 2 === 0 ? style["row_even"] : style["row_odd"];
-                  // =======
-                  //     return (<>
-                  //         <div className={style.container}>
-                  //             <div className={style.container_searchbar}>
-                  //                 <input type="text" placeholder='Busca por nombre' />
-                  //                 <button>🔍︎</button>
-                  //             </div>
-                  //             <div className={style.container_selects}>
-                  //                 <b>Estado:</b>
-                  //                 <select onChange={filterRol}>
-                  //                     <option value="todos">Todos</option>
-                  //                     <option value="active">Activos</option>
-                  //                     <option value="banned">Inactivos</option>
-                  //                 </select>
-                  //             </div>
-                  //             <table className={style.table}>
-                  //                 <thead>
-                  //                     <tr>
-                  //                         <th></th>
-                  //                         <th>Nombre</th>
-                  //                         <th>Cupos</th>
-                  //                         <th>Estado</th>
-                  //                     </tr>
-                  //                 </thead>
-                  //                 <tbody>
-                  //                     {
-                  //                         currentPageData.length > 0
-                  //                             ? currentPageData.map((grade, index) => {
-                  //                                 const rowClass = index % 2 === 0 ? style['row_even'] : style['row_odd']
-                  // >>>>>>> 7575e399d6a3068880acc747eaa5e205d352d962
 
                   return (
                     <tr className={`${style.row} ${rowClass}`} key={grade.id}>
@@ -130,11 +91,6 @@ function Grades() {
                       <td>{grade.gradename}</td>
                       <td>{grade.gradeQuotaLimit - grade.gradequota}</td>
                       <td>{grade.state ? "Activo" : "Inactivo"}</td>
-                      <td>
-                        <NavLink to={`/grades/edit/${grade.id}`}>
-                          <button>Editar</button>
-                        </NavLink>
-                      </td>
                     </tr>
                   );
                 })
@@ -147,20 +103,6 @@ function Grades() {
           pageSize={gradesPerPage}
           onPageChange={onPageChange}
         />
-        <div className={style.container_message}>
-          <p>
-            <b>¿No encontraste lo que buscabas?</b> Es posible que algunos
-            grados estén ocultas debido a los filtros que has seleccionado.
-          </p>
-          <button className={style.show_admins} onClick={showAllUsers}>
-            Mostrar todos los grados
-          </button>
-          {allGradesCopy.length !== 1 ? (
-            <small>{allGradesCopy.length} grades encontrados</small>
-          ) : (
-            <small>{allGradesCopy.length} grade encontrado</small>
-          )}
-        </div>
       </div>
       {statusOpen ? (
         <div className={style.overlay}>

@@ -65,3 +65,27 @@
     color: #ffffff;
   }
 }
+
+.return_button {
+  padding: 0.6em 1.3em;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  border: 0.2em solid #0b4c7b;
+  color: whitesmoke;
+  background-color: rgb(28, 110, 165);
+  border-radius: 0.6em;
+
+  &:hover {
+    background-color: #007bff;
+    color: #ffffff;
+    border-color: #0056b3;
+  }
+
+  &:active {
+    background-color: #0056b3;
+    border-color: #003366;
+    color: #ffffff;
+  }
+}

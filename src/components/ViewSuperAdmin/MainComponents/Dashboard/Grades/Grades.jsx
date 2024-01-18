@@ -55,26 +55,28 @@ function Grades() {
         dispatch(getAllGrades())
     }, [])
 
-    return (<>
-        <div className={style.container}>
-            <div className={style.container_searchbar}>
-                <input type="text" placeholder='Busca por nombre' />
-                <button>🔍︎</button>
-            </div>
-            <table className={style.table}>
-                <thead>
-                    <tr>
-                        <th></th>
-                        <th>Nombre</th>
-                        <th>Cupos</th>
-                        <th>Estado</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {
-                        currentPageData.length > 0
-                            ? currentPageData.map((grade, index) => {
-                                const rowClass = index % 2 === 0 ? style['row_even'] : style['row_odd']
+    return (
+        <>
+            <div className={style.container}>
+                <div className={style.container_searchbar}>
+                    <input type="text" placeholder='Busca por nombre' />
+                    <button>🔍︎</button>
+                </div>
+                <table className={style.table}>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Nombre</th>
+                            <th>Cupos Disponibles</th>
+                            <th>Estado</th>
+                            <th>Edicion</th> {/* Add a new header for actions */}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {currentPageData.length > 0 ? (
+                            currentPageData.map((grade, index) => {
+                                const rowClass =
+                                    index % 2 === 0 ? style['row_even'] : style['row_odd'];
 
                                 return (
                                     <tr className={`${style.row} ${rowClass}`} key={grade.id}>
@@ -82,33 +84,40 @@ function Grades() {
                                         <td>{grade.gradename}</td>
                                         <td>{grade.gradeQuotaLimit - grade.gradequota}</td>
                                         <td>{grade.state ? "Activo" : "Inactivo"}</td>
+                                        <td>
+                                            <NavLink to={`/grades/edit/${grade.id}`}>
+                                                <button>Editar</button>
+                                            </NavLink>
+                                        </td>
                                     </tr>
-                                )
-                            }) : null
-                    }
-                </tbody>
-            </table>
-            <Pagination
-                totalItems={totalGrades}
-                currentPage={currentPage}
-                pageSize={gradesPerPage}
-                onPageChange={onPageChange}
-            />
-        </div>
-        {
-            statusOpen ? <div className={style.overlay}>
-                <div className={style.container_status_modify}>
-                    <button onClick={closeStatus}>X</button>
-                    <h2>¿Desea {gradesDetail.state ? "desabilitar" : "habilitar"} el grado: {gradesDetail.gradename}?</h2>
-                    {
-                        gradesDetail.state
-                        && <button className={style.button_action} onClick={() => banToGrade(gradesDetail.id)}>Desabilitar grado</button>
-                        // : <button className={style.button_action} onClick={() => restoreToAdmin(gradesDetail.id)}>Restaurar admin</button>
-                    }
-                </div>
-            </div> : null
-        }
-    </>);
+                                );
+                            })
+                        ) : null}
+                    </tbody>
+                </table>
+                <Pagination
+                    totalItems={totalGrades}
+                    currentPage={currentPage}
+                    pageSize={gradesPerPage}
+                    onPageChange={onPageChange}
+                />
+               
+            </div>
+            {
+                statusOpen ? <div className={style.overlay}>
+                    <div className={style.container_status_modify}>
+                        <button onClick={closeStatus}>X</button>
+                        <h2>¿Desea {gradesDetail.state ? "desabilitar" : "habilitar"} el grado: {gradesDetail.gradename}?</h2>
+                        {
+                            gradesDetail.state
+                            && <button className={style.button_action} onClick={() => banToGrade(gradesDetail.id)}>Desabilitar grado</button>
+                            // : <button className={style.button_action} onClick={() => restoreToAdmin(gradesDetail.id)}>Restaurar admin</button>
+                        }
+                    </div>
+                </div> : null
+            }
+        </>
+    );
 }
 
 export default Grades;

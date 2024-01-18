@@ -116,52 +116,75 @@ const ParentDetail = () => {
   } = parent;
 
   return (
-    <Container>
-      <h2 className={style.tittle}>Detalles del Padre</h2>
+    <Container classname={style.main_container}>
+      <h2 className={style.title}>Detalles del Padre</h2>
       <Card>
-        <Card.Body className={style.cardBody}>
+        <Card.Body className={style.profile_container}>
           <Card.Title
-            className={style.name}
+            className={style.names}
           >{`${name} ${lastName}`}</Card.Title>
-          <Card.Text className={style.cardText}>
-            Documento: <p className={style.info}>{idDoc}</p>
+          <Card.Text>
+            <strong>
+              Foto Documento: <br />
+            </strong>
+
+            <img
+              className={style.docImage}
+              src={fotoDocumento}
+              alt="Foto del Documento"
+              // style={{ width: "3.5cm", height: "5cm" }}
+            />
+            <hr />
           </Card.Text>
-          <Card.Text className={style.cardText}>
-            Foto Documento:
-            <p className={style.info}>
-              <img
-                src={fotoDocumento}
-                alt="Foto del Documento"
-                style={{ width: "3.5cm", height: "5cm" }}
-              />
-            </p>
+          <Card.Text className={style.items}>
+            <strong>Documento:</strong>
+
+            {idDoc}
           </Card.Text>
-          <Card.Text className={style.cardText}>
-            Nivel Educativo: <p className={style.info}>{educationLevel}</p>
+          <Card.Text className={style.items}>
+            <strong>Nivel Educativo:</strong>
+
+            {educationLevel}
           </Card.Text>
-          <Card.Text className={style.cardText}>
-            Profesión: <p className={style.info}>{profession}</p>
+          <Card.Text className={style.items}>
+            <strong>Nivel Educativo:</strong>
+
+            {profession}
           </Card.Text>
-          <Card.Text className={style.cardText}>
-            Dirección: <p className={style.info}>{address}</p>
+          <Card.Text className={style.items}>
+            <strong>Dirección:</strong>
+
+            {address}
           </Card.Text>
-          <Card.Text className={style.cardText}>
-            Dirección de Trabajo: <p className={style.info}>{jobAddress}</p>
+          <Card.Text className={style.items}>
+            <strong>Dirección de Trabajo:</strong>
+
+            {jobAddress}
           </Card.Text>
-          <Card.Text className={style.cardText}>
-            Teléfono: <p className={style.info}>{telephone}</p>
+          <Card.Text className={style.items}>
+            <strong>Teléfono:</strong>
+
+            {telephone}
           </Card.Text>
-          <Card.Text className={style.cardText}>
-            Teléfono del Trabajo: <p className={style.info}>{jobTelephone}</p>
+          <Card.Text className={style.items}>
+            <strong>Teléfono del Trabajo:</strong>
+
+            {jobTelephone}
           </Card.Text>
-          <Card.Text className={style.cardText}>
-            Teléfono Celular: <p className={style.info}>{contactCellphone}</p>
+          <Card.Text className={style.items}>
+            <strong>Teléfono Celular:</strong>
+
+            {contactCellphone}
           </Card.Text>
-          <Card.Text className={style.cardText}>
-            Email: <p className={style.info}>{email}</p>
+          <Card.Text className={style.items}>
+            <strong>Email:</strong>
+
+            {email}
           </Card.Text>
-          <Card.Text className={style.cardText}>
-            Validado: {validate ? "Sí" : "Pendiente"}
+          <Card.Text className={style.items}>
+            <strong>Validado:</strong>
+
+            {validate ? "Sí✅" : "Pendiente⚠️"}
           </Card.Text>
           <span className={style.buttons}>
             <Button

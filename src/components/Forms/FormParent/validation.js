@@ -3,7 +3,7 @@ export const validation = (newParent) => {
 
   /* REGEX */
   // const idDocRegex = 1;
-  const nameRegex = /^[a-zA-ZáéíóúüÁÉÍÓÚÜñÑäëïöüÄËÏÖÜ]+$/;
+  const nameRegex = /^[a-zA-ZáéíóúüÁÉÍÓÚÜñÑäëïöüÄËÏÖÜ\s]+$/;
   const educationLevelRegex = /^[a-zA-Z]+$/;
   const professionRegex =
     /^[a-zA-ZáéíóúüñÁÉÍÓÚÜÑ]+(?:[ ]?[a-zA-ZáéíóúüñÁÉÍÓÚÜÑ]+)*$/;

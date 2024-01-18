@@ -7,6 +7,7 @@
   display: flex;
   align-items: center; /* Centrar verticalmente */
   justify-content: center; /* Centrar horizontalmente */
+  flex-direction: column;
 }
 
 .form_container {
@@ -88,4 +89,13 @@
     border-color: #003366;
     color: #ffffff;
   }
+}
+
+.return_button_container {
+  display: flex;
+  justify-content: center;
+  gap: 0.7em;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1em;
 }

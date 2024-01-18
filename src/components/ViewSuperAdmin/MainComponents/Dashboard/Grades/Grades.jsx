@@ -61,6 +61,10 @@ function Grades() {
     dispatch(getAllGrades());
   }, []);
 
+  useEffect(() => {
+    dispatch(getAllGrades());
+  }, []);
+
   return (
     <>
       <div className={style.container}>
@@ -73,8 +77,9 @@ function Grades() {
             <tr>
               <th></th>
               <th>Nombre</th>
-              <th>Cupos</th>
+              <th>Cupos Disponibles</th>
               <th>Estado</th>
+              <th>Edicion</th> {/* Add a new header for actions */}
             </tr>
           </thead>
           <tbody>
@@ -91,6 +96,11 @@ function Grades() {
                       <td>{grade.gradename}</td>
                       <td>{grade.gradeQuotaLimit - grade.gradequota}</td>
                       <td>{grade.state ? "Activo" : "Inactivo"}</td>
+                      <td>
+                        <NavLink to={`/grades/edit/${grade.id}`}>
+                          <button>Editar</button>
+                        </NavLink>
+                      </td>
                     </tr>
                   );
                 })

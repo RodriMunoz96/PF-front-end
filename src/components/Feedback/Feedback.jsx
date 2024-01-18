@@ -74,7 +74,7 @@ const FeedbackForm = () => {
         </div>
         <div className="form-group">
           <label htmlFor="satisfaction">
-            En una escala del 1 al 10, ¿cuál es su nivel de satisfacción general
+            En una escala del 1 al 5, ¿cuál es su nivel de satisfacción general
             con nuestra plataforma?
           </label>
           <input
